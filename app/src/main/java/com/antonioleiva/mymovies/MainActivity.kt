@@ -1,10 +1,11 @@
 package com.antonioleiva.mymovies
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.antonioleiva.mymovies.databinding.ActivityMainBinding
+import com.antonioleiva.mymovies.model.Movie
 import com.antonioleiva.mymovies.model.MovieDbClient
 import kotlinx.coroutines.launch
 
@@ -14,11 +15,7 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val moviesAdapter = MoviesAdapter(emptyList()) { movie ->
-            Toast
-                .makeText(this@MainActivity, movie.title, Toast.LENGTH_SHORT)
-                .show()
-        }
+        val moviesAdapter = MoviesAdapter(emptyList()) { navigateTo(it) }
         binding.recycler.adapter = moviesAdapter
 
         lifecycleScope.launch {
@@ -27,5 +24,12 @@ class MainActivity : AppCompatActivity() {
             moviesAdapter.movies = popularMovies.results
             moviesAdapter.notifyDataSetChanged()
         }
+    }
+
+    private fun navigateTo(movie: Movie) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.EXTRA_MOVIE, movie)
+
+        startActivity(intent)
     }
 }
