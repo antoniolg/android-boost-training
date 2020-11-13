@@ -1,12 +1,14 @@
-package com.antonioleiva.mymovies
+package com.antonioleiva.mymovies.ui.main
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.antonioleiva.mymovies.R
 import com.antonioleiva.mymovies.databinding.ActivityMainBinding
 import com.antonioleiva.mymovies.model.Movie
 import com.antonioleiva.mymovies.model.MovieDbClient
+import com.antonioleiva.mymovies.ui.detail.DetailActivity
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {

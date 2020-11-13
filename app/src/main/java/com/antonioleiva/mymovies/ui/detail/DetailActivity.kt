@@ -1,4 +1,4 @@
-package com.antonioleiva.mymovies
+package com.antonioleiva.mymovies.ui.detail
 
 import android.os.Bundle
 import android.widget.TextView
