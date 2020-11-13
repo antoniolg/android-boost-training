@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mis Películas</string>
+    <string name="original_language">Idioma original</string>
+    <string name="original_title">Título original</string>
+    <string name="release_date">Fecha de lanzamiento</string>
+    <string name="popularity">Popularidad</string>
+    <string name="vote_average">Votación media</string>
+</resources>
