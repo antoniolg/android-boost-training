@@ -22,6 +22,9 @@ class DetailActivity : AppCompatActivity() {
         val binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val movie = intent.getParcelableExtra<Movie>(EXTRA_MOVIE)
 
         if (movie != null) {
@@ -32,6 +35,10 @@ class DetailActivity : AppCompatActivity() {
                 .into(binding.backdrop)
             binding.summary.text = movie.overview
             bindDetailInfo(binding.detailInfo, movie)
+
+            binding.fab.setOnClickListener {
+
+            }
         }
     }
 
